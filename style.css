@@ -129,6 +129,15 @@ p {
     border-radius: 4px;
 }
 
+ .navbar__toggle-btn {
+     position: absolute;
+     top: 24px;
+     right: 32px;
+     font-size: 24px;
+     color: var(--color-white);
+     display: none;
+ }
+
 /* Home */
 #home {
     background: url('imgs/home-background.png') center/cover no-repeat;
@@ -450,3 +459,53 @@ p {
     color: var(--color-yellow);
     transition: all var(--animation-duration) ease-in;
 }
+
+/* For Below 768px screen width */
+
+@media screen and (max-width: 768px) {
+    .navbar__toggle-btn {
+        display: block;
+    }
+    #navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar__menu {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        display: none;
+    }
+
+    .about__majors {
+        flex-direction: column;
+    }
+
+    .major {
+        margin-bottom: 38px;
+    }
+
+    .skillset {
+        flex-direction: column;
+    }
+
+    .project {
+        flex-grow: 1;
+    }
+
+    .testimonial__avatar {
+        width: 80px;
+        height: 80px;;
+    }
+}
+
+/* 스타일링은 미디어 쿼리 안에서 하는 게 맞지 않나?
+미디어 쿼리 안에 들어가는 내용은 최소한의 것만 들어가야 함
+-> 차이점만 들어감
+토글 버튼은 html에 무조건 들어가있음 (미디어쿼리가 있든 없든)
+미디어쿼리는 스타일의 크기 작을 때만 적용됨
+따라서 미디어쿼리가 아닐 때는 토글버튼을 숨겨줘야하는데
+이 토글버튼은 밖에 들어가 있게 되어있음
+가능하다면 스타일링에 관련한 것은 본론에서 만들고, 차이점만
+(보여지고 안보여지는 것만) 최소한의 것만 미디어쿼리에서 작성
+하는 것이 더 좋을 것 같다. */
