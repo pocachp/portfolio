@@ -178,6 +178,10 @@ p {
     border-radius: var(--size-border-radius);
 }
 
+.home__contact:hover {
+    background-color: var(--color-orange);
+}
+
 /* Section common */
 .section {
     padding: 50px;
@@ -314,6 +318,7 @@ p {
     border-radius: var(--size-border-radius);
     font-size: var(--font-regular);
     padding: 8px 48px;
+    position: relative;
 }
 
 .category__btn .selected,
@@ -336,9 +341,9 @@ p {
     height: 24px;
     line-height: 24px;
     display: inline-block;
-    position: relative;
+    position: absolute;
     top: -20px;
-    left: 4px;
+    right: 16px;
     opacity: 0;
     transition: all var(--animation-duration) ease-in;
 }
@@ -507,8 +512,20 @@ p {
 /* For Below 768px screen width */
 
 @media screen and (max-width: 768px) {
+   :root {
+    /* Font size */
+    --font-large: 30px;
+    --font-medium: 18px;
+    --font-regular: 16px;
+    --font-small: 14px;
+    --font-micro: 12px;
+   } 
+
     .navbar__toggle-btn {
         display: block;
+        top: 16px;
+        right: 16px;
+        font-size: medium;
     }
     #navbar {
         flex-direction: column;
@@ -530,35 +547,62 @@ p {
         display: block;
     }
 
+    .section {
+        padding: 16px;
+        padding-top: 40px;
+    }
+
     .about__majors {
         flex-direction: column;
+        margin-top: 30px;
+        margin-bottom: 0px;
     }
 
     .major {
-        margin-bottom: 38px;
+        margin-bottom: 30px;
     }
 
     .skillset {
         flex-direction: column;
     }
 
+    .category__btn {
+        margin: 4px;
+        width: 100%;
+    }
+
     .project {
         flex-grow: 1;
     }
 
-    .testimonial__avatar {
-        width: 80px;
-        height: 80px;;
+    .testimonial {
+        flex-direction: column;
+        align-items: center;
     }
-}
 
-/* 스타일링은 미디어 쿼리 안에서 하는 게 맞지 않나?
-미디어 쿼리 안에 들어가는 내용은 최소한의 것만 들어가야 함
--> 차이점만 들어감
-토글 버튼은 html에 무조건 들어가있음 (미디어쿼리가 있든 없든)
-미디어쿼리는 스타일의 크기 작을 때만 적용됨
-따라서 미디어쿼리가 아닐 때는 토글버튼을 숨겨줘야하는데
-이 토글버튼은 밖에 들어가 있게 되어있음
-가능하다면 스타일링에 관련한 것은 본론에서 만들고, 차이점만
-(보여지고 안보여지는 것만) 최소한의 것만 미디어쿼리에서 작성
-하는 것이 더 좋을 것 같다. */
+    .testimonial__avatar {
+        width: 120px;
+        height: 120px;
+    }
+
+    .testimonial__avatar:nth-child(even),
+    .testimonial__avatar:nth-child(odd){
+        margin: 0;
+        margin-bottom: 8px;
+    }
+    
+
+    .testimonial__speech-bubble {
+        order: 1;
+    }
+    
+    .arrow-up {
+        width: 50px;
+        width: 50px;
+        font-size: 30px;
+        line-height: 50px;
+        right: 16px;
+        bottom: 16px;
+    }
+    
+}
