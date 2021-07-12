@@ -604,5 +604,14 @@ p {
         right: 16px;
         bottom: 16px;
     }
+
+    /*아이폰 : button 패딩 0으로 지정해줘야 함*/
+    button {
+        background-color: transparent;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        padding: 0;
+      }
     
 }
